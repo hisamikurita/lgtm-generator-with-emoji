@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: rgb(20, 20, 20);
+  background: linear-gradient(to bottom, #fecaca, #bae6fd, #a7f3d0, #fed7aa) fixed;
+  background-size: 200% 200%;
+  animation: grad 10s linear infinite;
+}
+
+@layer utilities {
+  .animation-name-emoji {
+    animation-name: emoji;
+  }
+
+  .animation-timing-linear {
+    animation-timing-function: linear;
+  }
+
+  .animation-itteration-count-infinite {
+    animation-iteration-count: infinite;
+  }
+
+  .animation-duration-1 {
+    animation-duration: 1s;
+  }
+  .animation-duration-2 {
+    animation-duration: 2s;
+  }
+  .animation-duration-3 {
+    animation-duration: 3s;
+  }
+  .animation-duration-4 {
+    animation-duration: 4s;
+  }
+  .animation-duration-5 {
+    animation-duration: 5s;
+  }
+  .animation-duration-6 {
+    animation-duration: 6s;
+  }
+  .animation-duration-7 {
+    animation-duration: 7s;
+  }
+  .animation-duration-8 {
+    animation-duration: 8s;
+  }
+  .animation-duration-9 {
+    animation-duration: 9s;
+  }
+  .animation-duration-10 {
+    animation-duration: 10s;
+  }
+  .animation-duration-11 {
+    animation-duration: 11s;
+  }
+  .animation-duration-12 {
+    animation-duration: 12s;
+  }
+  .animation-duration-13 {
+    animation-duration: 13s;
+  }
+  .animation-duration-14 {
+    animation-duration: 14s;
+  }
+  .animation-duration-15 {
+    animation-duration: 15s;
+  }
+  .animation-duration-16 {
+    animation-duration: 16s;
+  }
+  .animation-duration-17 {
+    animation-duration: 17s;
+  }
+  .animation-duration-18 {
+    animation-duration: 18s;
+  }
+  .animation-duration-19 {
+    animation-duration: 19s;
+  }
+  .animation-duration-20 {
+    animation-duration: 20s;
+  }  
+
+  .animation-delay-1 {
+    animation-delay: -1s;
+  }
+  .animation-delay-2 {
+    animation-delay: -2s;
+  }
+  .animation-delay-3 {
+    animation-delay: -3s;
+  }
+  .animation-delay-4 {
+    animation-delay: -4s;
+  }
+  .animation-delay-5 {
+    animation-delay: -5s;
+  }
+  .animation-delay-6 {
+    animation-delay: -6s;
+  }
+  .animation-delay-7 {
+    animation-delay: -7s;
+  }
+  .animation-delay-8 {
+    animation-delay: -8s;
+  }
+  .animation-delay-9 {
+    animation-delay: -9s;
+  }
+  .animation-delay-10 {
+    animation-delay: -10s;
+  }
+  .animation-delay-11 {
+    animation-delay: -11s;
+  }
+  .animation-delay-12 {
+    animation-delay: -12s;
+  }
+  .animation-delay-13 {
+    animation-delay: -13s;
+  }
+  .animation-delay-14 {
+    animation-delay: -14s;
+  }
+  .animation-delay-15 {
+    animation-delay: -15s;
+  }
+  .animation-delay-16 {
+    animation-delay: -16s;
+  }
+  .animation-delay-17 {
+    animation-delay: -17s;
+  }
+  .animation-delay-18 {
+    animation-delay: -18s;
+  }
+  .animation-delay-19 {
+    animation-delay: -19s;
+  }
+  .animation-delay-20 {
+    animation-delay: -20s;
+  }
+  
+}
+
+@keyframes grad { 
+  0%{background-position:0% 0%}
+  50%{background-position:0% 100%}
+  100%{background-position:0% 0%}
+}
+
+@keyframes emoji {
+  0% { transform: translateY(15vh)}
+  100% { transform: translateY(-100vh)} 
+}

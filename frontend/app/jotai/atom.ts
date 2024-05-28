@@ -1,0 +1,18 @@
+import { atom, createStore } from 'jotai'
+
+export const PREVIEW_DATA = atom('')
+export const GENERATE_DATA = atom('')
+export const IS_UPLOAD = atom(false)
+export const IS_CHANGE = atom(false)
+export const IS_COPY = atom(false)
+export const IS_DOWNLOAD = atom(false)
+export const IS_FAVORITE = atom(false)
+export const IS_NEW_PAGE = atom(false)
+export const IS_CREATE_PAGE = atom(false)
+export const IS_FAVORITE_PAGE = atom(false)
+export const IS_CURSOR_UPLOAD = atom(false)
+export const IS_CURSOR_CHANGE = atom(false)
+export const IS_CURSOR_GENERATE = atom(false)
+export const IS_LOADING = atom(false)
+export const IS_COMPLETE = atom(false)
+export const IS_SAVE_COMPLETE_IMAGE = atom('') 
