@@ -8,7 +8,7 @@ const EASING = {
     colorAndOpacity: CustomEase.create('colorAndOpacity', 'M0,0 C0.26,0.16 0.1,1 1,1 '),
 };
 
-export const slideIn = (elm: HTMLElement) => {
+export const slideIn = (elm: HTMLElement | null) => {
     gsap.fromTo(elm,
         {
             scale: 0,
@@ -22,7 +22,7 @@ export const slideIn = (elm: HTMLElement) => {
         });
 }
 
-export const slideOut = (elm: HTMLElement) => {
+export const slideOut = (elm: HTMLElement | null) => {
     gsap.to(elm, {
         scale: 0,
         rotate: -30,

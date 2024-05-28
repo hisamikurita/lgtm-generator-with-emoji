@@ -11,13 +11,13 @@ export const PageFavorite = () => {
     // ユーザーIDをセット
     useUuid()
 
-    const [list, setList] = useState([]);
+    const [list, setList] = useState([] as any[]);
     const [hasMore, setHasMore] = useState(true);
     const cookies = parseCookies();
 
     // お気に入り一覧取得
     //項目を読み込むときのコールバック
-    const loadMore = async (page) => {
+    const loadMore = async (page: Number) => {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_FAVORITE}?page=${page}&userId=${cookies.uuid}`);  //API通信
         const data = await res.json();  //取得データ
 

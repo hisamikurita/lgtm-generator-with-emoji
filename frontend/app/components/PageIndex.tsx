@@ -11,12 +11,12 @@ export const PageIndex = () => {
     // ユーザーIDをセット
     useUuid()
 
-    const [list, setList] = useState([]);
+    const [list, setList] = useState([] as any[]);
     const [hasMore, setHasMore] = useState(true);
     const cookies = parseCookies();
 
     //項目を読み込むときのコールバック
-    const loadMore = async (page) => {
+    const loadMore = async (page: Number) => {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_IMAGES}?page=${page}&userId=${cookies.uuid}`);  //API通信
         const data = await res.json();  //取得データ
 

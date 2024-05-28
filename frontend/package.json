@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-infinite-scroller": "^1.2.5",
     "gsap": "^3.12.5",
     "jotai": "^2.8.1",
     "next": "14.2.3",
