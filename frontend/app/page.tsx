@@ -1,5 +1,3 @@
-"use client";
-
 import { PageIndex } from "./components/PageIndex";
 
 const Index = () => {

@@ -7,6 +7,7 @@ import { useAtom } from "jotai";
 import { Cursor } from "./components/Cursor";
 import { GoogleAnalytics } from "./components/GoogleAnalytics";
 import "./globals.css";
+import { Suspense } from "react";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -40,7 +41,9 @@ const RootLayout = ({
   return (
     <html lang="ja" className={`${notoSansJP.variable} ${poppins.variable} ${notoColorEmoji.variable}`}>
       <head>
-        <GoogleAnalytics />
+        <Suspense>
+          <GoogleAnalytics />
+        </Suspense>
       </head>
       <body className='font-sans fonr-sans-emoji font-bold tracking-wide'>
         <div className="min-h-screen w-[1128px] m-auto pt-[40px] pb-[140px]">
