@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/react-infinite-scroller": "^1.2.5",
+    "@types/uuid": "^9.0.8",
     "gsap": "^3.12.5",
     "jotai": "^2.8.1",
     "next": "14.2.3",
