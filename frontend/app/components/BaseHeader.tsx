@@ -33,13 +33,13 @@ export const BaseHeader = () => {
 
     }, []); 
 
-    const handleMouseEnter = (e) => {
+    const handleMouseEnter = (e: any) => {
         if(e.target.dataset.id === 'new') setIsNewPage(true);
         else if(e.target.dataset.id === 'create') setIsCreatePage(true);
         else if(e.target.dataset.id === 'favorite') setIsFavoritePage(true);
     }
 
-    const handleMouseLeave = (e) => {
+    const handleMouseLeave = (e: any) => {
         if(e.target.dataset.id === 'new') setIsNewPage(false);
         else if(e.target.dataset.id === 'create') setIsCreatePage(false);
         else if(e.target.dataset.id === 'favorite') setIsFavoritePage(false);
