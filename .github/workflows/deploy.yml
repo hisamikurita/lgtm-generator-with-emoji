@@ -26,5 +26,4 @@ jobs:
 
       # S3にアップロード
       - name: Sync to S3
-        run: |
-          aws s3 sync images s3://github-actions-fileupload-to-s3/images --delete
+        run: aws s3 sync --exact-timestamps --delete ./frontend/out s3://${{ secrets.S3_BUCKET }}/
