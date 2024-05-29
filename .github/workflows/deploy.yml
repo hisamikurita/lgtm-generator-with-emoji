@@ -1,0 +1,29 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    # Ubuntuの最新版環境内で処理を実行することを指定
+    runs-on: ubuntu-latest
+
+    steps:
+      # 公式のアクション「actions/checkout」実行してリポジトリをクローンしてくる
+      - name: 📦 Get latest code
+        uses: actions/checkout@v3
+
+      # AWSにアクセスするためのクレデンシャルを設定
+      - name: 🔑 Set up AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # S3にアップロード
+      - name: Sync to S3
+        run: |
+          aws s3 sync images s3://github-actions-fileupload-to-s3/images --delete
