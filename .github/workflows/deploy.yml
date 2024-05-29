@@ -17,13 +17,13 @@ jobs:
         working-directory: frontend
 
     steps:
-      # デバッグ
-      - name: Debug
-        run: pwd
-
       # 公式のアクション「actions/checkout」実行してリポジトリをクローンしてくる
       - name: 📦 Get latest code
         uses: actions/checkout@v3
+
+      # デバッグ
+      - name: Debug
+        run: pwd
 
       # AWS IAM ユーザーから認証情報を取得する
       - name: 🔑 Set up AWS Credentials
