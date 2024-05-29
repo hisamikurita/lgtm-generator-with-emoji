@@ -60,9 +60,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          path: frontend  
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache: frontend/${{ steps.detect-package-manager.outputs.manager }}
 
       # Next.jsの設定を行う
       - name: Setup Pages
