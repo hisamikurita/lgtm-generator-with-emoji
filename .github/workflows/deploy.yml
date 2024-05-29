@@ -11,6 +11,11 @@ jobs:
     # Ubuntuの最新版環境内で処理を実行することを指定
     runs-on: ubuntu-latest
 
+    # フロントエンドのディレクトリに移動
+    defaults:
+      run:
+        working-directory: ./frontend
+
     steps:
       # 公式のアクション「actions/checkout」実行してリポジトリをクローンしてくる
       - name: 📦 Get latest code
