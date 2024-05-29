@@ -37,47 +37,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # パッケージマネージャーを検出
-      # - name: Detect package manager
-      #   id: detect-package-manager
-      #   run: |
-      #     if [ -f "${{ github.workspace }}/frontend/yarn.lock" ]; then
-      #       echo "manager=yarn" >> $GITHUB_OUTPUT
-      #       echo "command=install" >> $GITHUB_OUTPUT
-      #       echo "runner=yarn" >> $GITHUB_OUTPUT
-      #       exit 0
-      #     elif [ -f "${{ github.workspace }}/frontend/package.json" ]; then
-      #       echo "manager=npm" >> $GITHUB_OUTPUT
-      #       echo "command=ci" >> $GITHUB_OUTPUT
-      #       echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-      #       exit 0
-      #     else
-      #       echo "Unable to determine package manager"
-      #       exit 1
-      #     fi
-
       # Node.jsのバージョンを指定
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          # cache: npm
-
-      # Next.jsの設定を行う
-      # - name: Setup Pages
-      #   uses: actions/configure-pages@v4
-      #   with:
-      #     static_site_generator: next
-
-      # キャッシュを復元
-      # - name: Restore cache
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: |
-      #       .next/cache
-      #     key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       
       # パッケージのインストール
       - name: Install dependencies
@@ -89,4 +53,4 @@ jobs:
 
       # S3にアップロード
       - name: Sync to S3
-        run: aws s3 sync --exact-timestamps --delete ./frontend/out s3://${{ secrets.S3_BUCKET }}/
+        run: aws s3 sync --exact-timestamps --delete ./out s3://${{ secrets.S3_BUCKET }}/
