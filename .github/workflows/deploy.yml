@@ -53,4 +53,4 @@ jobs:
 
       # S3にアップロード
       - name: Sync to S3
-        run: aws s3 sync --exact-timestamps --delete ./out s3://${{ secrets.S3_BUCKET }}
+        run: aws s3 sync --exact-timestamps --delete ./out s3://lgtm-generator-with-emoji
