@@ -11,25 +11,19 @@ permissions:
 
 jobs:
   build:
-
-    # Ubuntuの最新版環境内で処理を実行することを指定
     runs-on: ubuntu-latest
 
-    # フロントエンドのディレクトリに移動
     defaults:
       run:
         working-directory: frontend
 
     steps:
-      # 公式のアクション「actions/checkout」実行してリポジトリをクローンしてくる
       - name: 📦 Get latest code
         uses: actions/checkout@v3
 
-      # デバッグ
       - name: Debug
         run: pwd
 
-      # AWS IAM ユーザーから認証情報を取得する
       - name: 🔑 Set up AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -37,39 +31,32 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # パッケージマネージャーを検出
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          if [ -f "${{ github.workspace }}/frontend/yarn.lock" ]; then
+          if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
             echo "runner=yarn" >> $GITHUB_OUTPUT
-            exit 0
-          elif [ -f "${{ github.workspace }}/frontend/package.json" ]; then
+          elif [ -f "package.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
             echo "command=ci" >> $GITHUB_OUTPUT
             echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-            exit 0
           else
             echo "Unable to determine package manager"
             exit 1
-          fi
 
-      # Node.jsのバージョンを指定
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: frontend/${{ steps.detect-package-manager.outputs.manager }}
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
 
-      # Next.jsの設定を行う
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
           static_site_generator: next
 
-      # キャッシュを復元
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -78,15 +65,15 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      
-      # パッケージのインストール
+
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
-      # Next.jsのビルド
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
-      # S3にアップロード
+      - name: Export with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next export
+
       - name: Sync to S3
-        run: aws s3 sync --exact-timestamps --delete ./frontend/out s3://${{ secrets.S3_BUCKET }}/
+        run: aws s3 sync --exact-timestamps --delete ./out s3://${{ secrets.S3_BUCKET }}/
