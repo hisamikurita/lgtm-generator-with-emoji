@@ -61,7 +61,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: npm
+          # cache: npm
 
       # Next.jsの設定を行う
       # - name: Setup Pages
