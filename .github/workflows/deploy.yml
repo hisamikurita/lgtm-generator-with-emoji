@@ -16,9 +16,9 @@ jobs:
       - name: 📦 Get latest code
         uses: actions/checkout@v3
 
-      # AWSにアクセスするためのクレデンシャルを設定
+      # AWS IAM ロールから認証情報を取得する
       - name: 🔑 Set up AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
