@@ -75,6 +75,6 @@ export const CardPreview = ({image} : CardPreviewProps) => {
     }, [image, change]);
 
     return (
-        <canvas ref={canvasRef} style={{width: THUMBNAIL_SIZE.width, height: THUMBNAIL_SIZE.height}} />
+        <canvas ref={canvasRef} style={{width: '100%', height: '100%'}} />
     )
 };

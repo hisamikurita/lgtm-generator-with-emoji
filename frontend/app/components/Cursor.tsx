@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { useAtom } from "jotai";
 import { IS_COPY, IS_DOWNLOAD, IS_FAVORITE, IS_NEW_PAGE, IS_CREATE_PAGE, IS_FAVORITE_PAGE, IS_CURSOR_UPLOAD, IS_CURSOR_CHANGE, IS_CURSOR_GENERATE, IS_LOADING, IS_COMPLETE } from "../jotai/atom";
 import { slideIn, slideOut } from "../utils/animation";
+import { useDevice } from "../hooks/useDevice";
 
 export const Cursor = () => {
     const [isCopy] = useAtom(IS_COPY);
@@ -14,7 +15,7 @@ export const Cursor = () => {
     const [isFavoritePage] = useAtom(IS_FAVORITE_PAGE);
     const [isCursorUpload] = useAtom(IS_CURSOR_UPLOAD);
     const [isCursorChange] = useAtom(IS_CURSOR_CHANGE);
-    const [isCursorGenerate] = useAtom(IS_CURSOR_GENERATE);
+    const [isCursorGenerate, setIsCursorGenerate] = useAtom(IS_CURSOR_GENERATE);
     const [isLoading] = useAtom(IS_LOADING);
     const [isComplete] = useAtom(IS_COMPLETE);
 
@@ -30,6 +31,8 @@ export const Cursor = () => {
     const cursorGenerateRef = useRef<HTMLDivElement>(null);
     const cursorCompleteRef = useRef<HTMLDivElement>(null);
 
+    const { isTouch } = useDevice();
+
     useEffect(() => {
         window.addEventListener('mousemove', (e) => {
             if(!cursorRef.current) return;
@@ -39,7 +42,7 @@ export const Cursor = () => {
     },[])
 
     useEffect(() => {
-        if(isLoading || isComplete) return;
+        if(isLoading || isComplete || isTouch) return;
 
         if(isCopy) slideIn(cursorCopyRef.current);
         else slideOut(cursorCopyRef.current);
@@ -67,9 +70,10 @@ export const Cursor = () => {
 
         if(isCursorGenerate) slideIn(cursorGenerateRef.current);
         else slideOut(cursorGenerateRef.current);
-    }, [isCopy, isDownload, isFavorite, isNewPage, isCreatePage, isFavoritePage, isCursorUpload, isCursorChange, isCursorGenerate])
+    }, [isCopy, isDownload, isFavorite, isNewPage, isCreatePage, isFavoritePage, isCursorUpload, isCursorChange, isCursorGenerate, isLoading])
 
     useEffect(() => {
+        setIsCursorGenerate(false);
         slideOut(cursorGenerateRef.current);
 
         if(isComplete) slideIn(cursorCompleteRef.current);
@@ -81,11 +85,11 @@ export const Cursor = () => {
             <div ref={cursorCopyRef} className="absolute left-[-50%] whitespace-nowrap flex justify-center shirink-0  bg-white py-[12px] px-[14px] translate-y-[-120%] translate-x-[-50%] rounded-md after:border-x-[8px] after:border-t-[10px] after:border-transparent after:border-t-white after:absolute after:bottom-[-8px] scale-0 origin-bottom">
                 LGTMテキストを<br/>コピーしたよ！
             </div>
-            <div ref={cursorDownloadRef} className="absolute left-[-50%] whitespace-nowrap flex justify-center shirink-0 bg-white py-[12px] px-[14px] left-[-50%] translate-y-[-120%] translate-x-[-50%] rounded-md after:border-x-[8px] after:border-t-[10px] after:border-transparent after:border-t-white after:absolute after:bottom-[-8px] scale-0 origin-bottom">
-                この画像を<br/>ダウンロードできるよ！
-            </div>
             <div ref={cursorFavoriteRef} className="absolute left-[-50%] whitespace-nowrap flex justify-center shirink-0 bg-white py-[12px] px-[14px] left-[-50%] translate-y-[-120%] translate-x-[-50%] rounded-md after:border-x-[8px] after:border-t-[10px] after:border-transparent after:border-t-white after:absolute after:bottom-[-8px] scale-0 origin-bottom">
                 この画像を<br/>お気に入りしたよ！
+            </div>
+            <div ref={cursorDownloadRef} className="absolute left-[-50%] whitespace-nowrap flex justify-center shirink-0 bg-white py-[12px] px-[14px] left-[-50%] translate-y-[-120%] translate-x-[-50%] rounded-md after:border-x-[8px] after:border-t-[10px] after:border-transparent after:border-t-white after:absolute after:bottom-[-8px] scale-0 origin-bottom">
+                この画像を<br/>ダウンロードできるよ！
             </div>
             <div ref={cursorNewPageRef} className="absolute left-[-50%] whitespace-nowrap flex justify-center shirink-0 bg-white py-[12px] px-[14px] left-[-50%] translate-y-[-120%] translate-x-[-50%] rounded-md after:border-x-[8px] after:border-t-[10px] after:border-transparent after:border-t-white after:absolute after:bottom-[-8px] scale-0 origin-bottom">
                 みんなが作成した画像を<br/>見ることができるページだよ！

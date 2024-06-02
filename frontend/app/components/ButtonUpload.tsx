@@ -44,7 +44,7 @@ export const ButtonUpload = () => {
     return (
         <div className='flex items-center justify-center tracking-wider'>
             <input type="file" id='upload' accept="image/*" ref={input} onChange={handleFiles} className='hidden'></input>
-            <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} id='upload' className='flex items-center justify-center gap-[10px] w-[260px] h-[54px] bg-blue-500 font-poppins text-white text-[20px] shadow-2xl rounded-full'>
+            <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} id='upload' className='flex items-center justify-center gap-[10px] w-full md:w-[260px] h-[54px] bg-blue-500 font-poppins text-white text-[20px] shadow-2xl rounded-full'>
                 UPLOAD
                 <svg viewBox="0 0 512 512" className="w-[19px] h-[19px] rotate-[180deg]">
                     <path d="M243.591,309.362c3.272,4.317,7.678,6.692,12.409,6.692c4.73,0,9.136-2.376,12.409-6.689l89.594-118.094

@@ -51,7 +51,7 @@ export const ButtonGenerate = () => {
 
     return (
         <div className='flex items-center justify-center tracking-wider'>
-            <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} className={`flex items-center justify-center gap-[10px] w-[260px] h-[54px] font-poppins text-[20px] shadow-2xl rounded-full ${upload ? 'bg-orange-500 text-white pointer-events-auto' : 'bg-gray-500 text-gray-300 pointer-events-none'}`}>
+            <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} className={`flex items-center justify-center gap-[10px] w-full md:w-[260px] h-[54px] font-poppins text-[20px] shadow-2xl rounded-full ${upload ? 'bg-orange-500 text-white pointer-events-auto' : 'bg-gray-500 text-gray-300 pointer-events-none'}`}>
                 GENERATE !
             </button>
         </div>

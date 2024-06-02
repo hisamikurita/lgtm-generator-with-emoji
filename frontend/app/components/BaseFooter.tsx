@@ -5,7 +5,7 @@ import { URL_NOTICE, URL_PRIVACY } from "../utils/constants";
 export const BaseFooter = () => {
     return (
         <footer className='bg-stone-900 text-white py-[12px] text-[12px] md:text-[14px]'>
-            <div className="flex items-center justify-between md:w-[1128px] m-auto px-[20px] md:px-0">
+            <div className="flex items-center justify-between md:max-w-[1148px] m-auto px-[20px]">
                 <p className="font-poppins tracking-wide">© 2024 <a href="https://hsmkrt-tech.com/about/" target="_blank" rel="noopener noreferrer" aria-label="Githubを新規タブで開きます" className="border-b-[1px]">Hisami Kurita</a></p>
                 <div>
                     <ul className="flex items-center gap-[12px] md:gap-[18px]">

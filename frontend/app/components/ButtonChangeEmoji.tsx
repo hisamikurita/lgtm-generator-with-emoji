@@ -25,7 +25,7 @@ export const ButtonChangeEmoji = () => {
 
     return (
         <div className='flex items-center justify-center tracking-wider'>
-            <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} className={`flex items-center justify-center gap-[10px] w-[260px] h-[54px] font-poppins text-[20px] shadow-2xl rounded-full ${upload ? 'bg-green-500 text-white pointer-events-auto' : 'bg-gray-500 text-gray-300 pointer-events-none'}`}>
+            <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick} className={`flex items-center justify-center gap-[10px] w-full md:w-[260px] h-[54px] font-poppins text-[20px] shadow-2xl rounded-full ${upload ? 'bg-green-500 text-white pointer-events-auto' : 'bg-gray-500 text-gray-300 pointer-events-none'}`}>
                 CHANGE EMOJI
                 <svg viewBox="0 0 512 512" className="w-[19px] h-[19px]">
                     <path d="M509.86,267.434c-2.785-4.717-7.858-7.613-13.338-7.613h-43.677v-108.21

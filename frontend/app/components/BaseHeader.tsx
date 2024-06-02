@@ -47,7 +47,7 @@ export const BaseHeader = () => {
 
     return (
         <div className="relative">
-            <h1 className='text-[30px] md:text-[60px] text-center font-poppins tracking-wider'>LGTM GENERATOR <br className="md:hidden"/>WITH <span className="bg-white px-[6px] md:px-[14px] rounded-lg"><span className="relative bottom-[-1px] right-[-2px]">{EMOJIS[emojiIndex]}</span></span></h1>
+            <h1 className='text-[30px] md:text-[60px] text-center font-poppins tracking-wider'>LGTM GENERATOR <br className="md:hidden"/>WITH <span className="bg-white px-[6px] md:px-[14px] rounded-lg"><span className="relative bottom-[-1px] right-[-2px]" aria-label="EMOJI">{EMOJIS[emojiIndex]}</span></span></h1>
             <p className="mt-[24px] text-[16px] md:text-[20px] text-center leading-8 md:leading-10">この LGTM GENERATOR WITH EMOJI は<br className="md:hidden"/>シンプルな操作で<br />素早くLGTM（Looks Good To Me）画像を<br className="md:hidden"/>生成できる便利なツールです。<br />手間なく高品質な画像を作成し、<br className="md:hidden"/>コミュニケーションをもっと楽しくスムーズに。</p>
             <nav className="w-full mt-[64px]">
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-[14px] md:gap-[24px] text-[20px] font-poppins text-white tracking-wider">

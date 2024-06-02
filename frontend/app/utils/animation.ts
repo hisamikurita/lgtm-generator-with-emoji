@@ -9,11 +9,7 @@ const EASING = {
 };
 
 export const slideIn = (elm: HTMLElement | null) => {
-    gsap.fromTo(elm,
-        {
-            scale: 0,
-            rotate: -30,
-        },
+    gsap.to(elm,
         {
             scale: 1,
             rotate: 0,
