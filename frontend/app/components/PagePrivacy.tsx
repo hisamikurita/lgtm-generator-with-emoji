@@ -8,8 +8,8 @@ export const PagePrivacy = () => {
 
     return (
         <div className="relative mt-[60px]">
-        <h1 className="text-[32px]">プライバシーポリシー</h1>
-        <ul className="grid gap-[24px] mt-[60px] text-[16px]">
+        <h1 className="text-[24px] md:text-[32px]">プライバシーポリシー</h1>
+        <ul className="grid gap-[24px] mt-[40px] md:mt-[60px] text-[14px] md:text-[16px]">
             <li>
             <h2>アクセス解析ツールについて</h2>
             <ul className="mt-[8px]">

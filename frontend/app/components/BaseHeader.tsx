@@ -14,6 +14,8 @@ export const BaseHeader = () => {
     const [isNewPage, setIsNewPage] = useAtom(IS_NEW_PAGE);
     const [emojiIndex, setEmojiIndex] = useState(0);
     const pathname = usePathname();
+    console.log(pathname);
+    console.log(pathname === '/create/');
 
     useEffect(() => {
         // ランダムな絵文字を返す
@@ -47,13 +49,13 @@ export const BaseHeader = () => {
 
     return (
         <div className="relative">
-            <h1 className='text-[60px] text-center font-poppins tracking-wider'>LGTM GENERATOR WITH <span className="bg-white px-[14px] rounded-lg"><span className="relative bottom-[-1px] right-[-2px]">{EMOJIS[emojiIndex]}</span></span></h1>
-            <p className="mt-[24px] text-[20px] text-center leading-10">この LGTM GENERATOR WITH EMOJI はシンプルな操作で<br />素早くLGTM（Looks Good To Me）画像を生成できる便利なツールです。<br />手間なく高品質な画像を作成し、コミュニケーションをもっと楽しくスムーズに。</p>
+            <h1 className='text-[30px] md:text-[60px] text-center font-poppins tracking-wider'>LGTM GENERATOR <br className="md:hidden"/>WITH <span className="bg-white px-[6px] md:px-[14px] rounded-lg"><span className="relative bottom-[-1px] right-[-2px]">{EMOJIS[emojiIndex]}</span></span></h1>
+            <p className="mt-[24px] text-[16px] md:text-[20px] text-center leading-8 md:leading-10">この LGTM GENERATOR WITH EMOJI は<br className="md:hidden"/>シンプルな操作で<br />素早くLGTM（Looks Good To Me）画像を<br className="md:hidden"/>生成できる便利なツールです。<br />手間なく高品質な画像を作成し、<br className="md:hidden"/>コミュニケーションをもっと楽しくスムーズに。</p>
             <nav className="w-full mt-[64px]">
-                <ul className="grid grid-cols-3 gap-[24px] text-[20px] font-poppins text-white tracking-wider">
-                    <li><Link href={URL_INDEX} data-id="new" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`flex justify-center py-[12px] bg-stone-900 shadow-2xl rounded-full ${pathname === '/' ? 'bg-amber-400 shadow-inner' : ''}`}>NEW !</Link></li>
-                    <li><Link href={URL_CREATE} data-id="create" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`flex justify-center py-[12px] bg-stone-900 shadow-2xl rounded-full ${pathname === '/create' ? 'bg-amber-400 shadow-inner' : ''}`}>CREATE !</Link></li>
-                    <li><Link href={URL_FAVORITE} data-id="favorite" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`flex justify-center py-[12px] bg-stone-900 shadow-2xl rounded-full ${pathname === '/favorite' ? 'bg-amber-400 shadow-inner' : ''}`}>FAVORITE !</Link></li>
+                <ul className="grid grid-cols-1 md:grid-cols-3 gap-[14px] md:gap-[24px] text-[20px] font-poppins text-white tracking-wider">
+                    <li><Link href={URL_INDEX} data-id="new" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`flex justify-center py-[12px] rounded-full ${pathname === '/' ? 'bg-amber-400 shadow-inner' : 'bg-stone-900 shadow-2xl'}`}>NEW !</Link></li>
+                    <li><Link href={URL_CREATE} data-id="create" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`flex justify-center py-[12px] rounded-full ${pathname === '/create/' ? 'bg-amber-400 shadow-inner' : 'bg-stone-900 shadow-2xl'}`}>CREATE !</Link></li>
+                    <li><Link href={URL_FAVORITE} data-id="favorite" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`flex justify-center py-[12px] rounded-full ${pathname === '/favorite/' ? 'bg-amber-400 shadow-inner' : 'bg-stone-900 shadow-2xl'}`}>FAVORITE !</Link></li>
                 </ul>
             </nav>
         </div>

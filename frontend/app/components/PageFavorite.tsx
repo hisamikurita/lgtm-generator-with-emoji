@@ -31,7 +31,7 @@ export const PageFavorite = () => {
     }
 
     const items = (
-        <ul className='grid grid-cols-3 gap-[24px] mt-[60px]'>
+        <ul className='grid grid-cols-1 md:grid-cols-3 gap-[24px] mt-[60px]'>
             {list.map((image, index) => (
                 <li key={index} className={`w-[${THUMBNAIL_SIZE.width}px] h-[${THUMBNAIL_SIZE.height}px]`}>
                     <CardThumbnail image={image} />

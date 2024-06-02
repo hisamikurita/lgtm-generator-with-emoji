@@ -7,6 +7,7 @@ services:
     build:
       context: .
       dockerfile: ./.docker/app/Dockerfile
+    image: lgtm-generator-with-emoji:latest
     volumes:
       - ../:/app
     # ports:

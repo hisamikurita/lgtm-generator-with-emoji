@@ -9,6 +9,10 @@ body {
   animation: grad 10s linear infinite;
 }
 
+img {
+  width: 100%;
+}
+
 @layer utilities {
   .animation-name-emoji {
     animation-name: emoji;
