@@ -39,7 +39,7 @@ export const PageCreate = () => {
                     <ButtonGenerate />
                 </div>
             </div>
-            <GoogleAdSenseCard slot="7687138817" format='fluid' />
+            {/* <GoogleAdSenseCard slot="7687138817" format='fluid' /> */}
         </div>
     );
 }
