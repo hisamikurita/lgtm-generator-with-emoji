@@ -8,6 +8,7 @@ import { THUMBNAIL_SIZE } from '../utils/constants';
 import { CardPreview } from '../components/CardPreview';
 import { useAtom } from 'jotai';
 import { PREVIEW_DATA, IS_LOADING } from '../jotai/atom';
+import { GoogleAdSenseCard } from '../components/GoogleAdSenseCard';
 
 export const PageCreate = () => {
     // ユーザーIDをセット
@@ -38,6 +39,7 @@ export const PageCreate = () => {
                     <ButtonGenerate />
                 </div>
             </div>
+            <GoogleAdSenseCard slot="7687138817" format='fluid' />
         </div>
     );
 }
