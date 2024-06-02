@@ -27,7 +27,10 @@ jobs:
 
       # デバッグ
       - name: Debug
-        run: pwd
+        run: |
+          pwd
+          echo ${{ secrets.NEXT_PUBLIC_GA_ID }}
+          echo ${{ secrets.NEXT_PUBLIC_PUBLISHER_ID }}
 
       # AWS IAM ユーザーから認証情報を取得する
       - name: 🔑 Set up AWS Credentials
