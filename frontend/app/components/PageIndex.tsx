@@ -11,8 +11,6 @@ export const PageIndex = () => {
     // ユーザーIDをセット
     useUuid()
 
-    console.log('PageIndex');
-
     const [list, setList] = useState([] as any[]);
     const [hasMore, setHasMore] = useState(true);
     const cookies = parseCookies();

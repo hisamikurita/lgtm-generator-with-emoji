@@ -56,7 +56,7 @@ const RootLayout = ({
           <GoogleAnalytics />
         </Suspense>
       </head>
-      <body className='font-sans fonr-sans-emoji font-bold tracking-wide'>
+      <body className='pt-[64px] font-sans fonr-sans-emoji font-bold tracking-wide'>
         <div className="min-h-screen md:max-w-[1148px] m-auto pt-[40px] px-[20px] pb-[140px]">
           { FIX_EMOJI.map((data, index) => (
             <span key={index} className={`animation-name-emoji ${data.duration} ${data.delay} animation-timing-linear animation-itteration-count-infinite fixed bottom-0 ${data.position} ${data.size} filter ${data.blur}`}>
