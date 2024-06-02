@@ -32,15 +32,14 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   openGraph: {
-    images: [
-      {
-        url: 'ogp.jpg',
-        width: 1200,
-        height: 630,
-        alt: TITLE,
-      },
-    ],
-  },
+		title: TITLE,
+		description: DESCRIPTION,
+	},
+	twitter: {
+		title: TITLE,
+		description: DESCRIPTION,
+		card: 'summary_large_image',
+	},
 }
 
 const RootLayout = ({
