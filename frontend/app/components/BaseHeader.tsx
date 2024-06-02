@@ -14,8 +14,6 @@ export const BaseHeader = () => {
     const [isNewPage, setIsNewPage] = useAtom(IS_NEW_PAGE);
     const [emojiIndex, setEmojiIndex] = useState(0);
     const pathname = usePathname();
-    console.log(pathname);
-    console.log(pathname === '/create/');
 
     useEffect(() => {
         // ランダムな絵文字を返す

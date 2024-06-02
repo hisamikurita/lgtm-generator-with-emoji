@@ -28,8 +28,19 @@ const notoColorEmoji = Noto_Color_Emoji({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://lgtm-generator-with-emoji.com/'),
   title: TITLE,
   description: DESCRIPTION,
+  openGraph: {
+    images: [
+      {
+        url: 'ogp.jpg',
+        width: 1200,
+        height: 630,
+        alt: TITLE,
+      },
+    ],
+  },
 }
 
 const RootLayout = ({
