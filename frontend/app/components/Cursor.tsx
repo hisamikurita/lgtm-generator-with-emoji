@@ -73,6 +73,7 @@ export const Cursor = () => {
     }, [isCopy, isDownload, isFavorite, isNewPage, isCreatePage, isFavoritePage, isCursorUpload, isCursorChange, isCursorGenerate, isLoading])
 
     useEffect(() => {
+        
         setIsCursorGenerate(false);
         slideOut(cursorGenerateRef.current);
 
