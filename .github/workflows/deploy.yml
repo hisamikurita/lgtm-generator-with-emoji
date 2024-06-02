@@ -57,5 +57,4 @@ jobs:
 
       # CloudFrontのキャッシュを削除
       - name: Clear cache
-       run: |
-         aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
