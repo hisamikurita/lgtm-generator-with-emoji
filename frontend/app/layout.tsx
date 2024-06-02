@@ -6,6 +6,7 @@ import { FIX_EMOJI, TITLE, DESCRIPTION } from "./utils/constants";
 import { useAtom } from "jotai";
 import { Cursor } from "./components/Cursor";
 import { GoogleAnalytics } from "./components/GoogleAnalytics";
+import { GoogleAdSense } from "./components/GoogleAdSense";
 import "./globals.css";
 import { Suspense } from "react";
 
@@ -70,6 +71,7 @@ const RootLayout = ({
           <div className="fixed bottom-0 left-0 w-full">
             <BaseFooter />
           </div>
+          <GoogleAdSense />
         </div>
       </body>
     </html>
