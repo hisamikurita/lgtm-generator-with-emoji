@@ -9,6 +9,10 @@ permissions:
   contents: read
   pages: write
 
+env:
+  NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+  NEXT_PUBLIC_PUBLISHER_ID: ${{ secrets.NEXT_PUBLIC_PUBLISHER_ID }}
+
 jobs:
   build:
 
