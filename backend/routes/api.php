@@ -11,8 +11,8 @@ Route::get('/images', [ImagesController::class, 'index']);
 Route::post('/images', [ImagesController::class, 'store']);
 
 // 画像アップロード
-Route::get('/upload', [UploadController::class, 'upload']);
-Route::post('/upload', [UploadController::class, 'upload']);
+Route::get('/upload', [UploadController::class, 'store']);
+Route::post('/upload', [UploadController::class, 'store']);
 
 // ユーザー
 Route::get('/user', [UserController::class, 'store']);

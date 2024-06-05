@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Images;
+use Illuminate\Support\Facades\Log;
 
 class UploadController extends Controller
 {
-    public function upload(Request $request)
+    public function store(Request $request)
     {
-        try{
+        // try {
             // リクエストからファイルを取得
             $base64 = $request->get('image');
 
@@ -27,10 +28,10 @@ class UploadController extends Controller
             $fileData = base64_decode($fileData);
 
             // ランダムなファイル名生成
-            $fileName = md5(uniqid(rand(), true)). ".$extension";
+            $fileName = md5(uniqid(rand(), true)) . ".$extension";
 
             // S3 に保存する
-            Storage::disk('s3')->put($fileName, $fileData, 'public');
+            $isPut = Storage::disk('s3')->put($fileName, $fileData);
 
             // データベースに保存
             Images::create([
@@ -40,11 +41,8 @@ class UploadController extends Controller
             // データベースに保存するためのパスを返す
             return response()->json([
                 'message' => 'Successfully uploaded image!',
-                'image_url' => Storage::disk('s3')->url($fileName)
+                'put' => $isPut,
+                'image_url' => Storage::disk('s3')->url($fileName),
             ], 201);
-        }
-        catch(\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
     }
 }

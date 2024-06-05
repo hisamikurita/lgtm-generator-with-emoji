@@ -29,7 +29,7 @@ class ImagesViewModel extends ViewModel
     {
         return [
             'id' => $this->image->id,
-            'image_url' => 'http://127.0.0.1:9000/lgtm-generator/' . $this->image->image_url,
+            'image_url' => 'https://images.lgtm-generator-with-emoji.com/' . $this->image->image_url,
             'is_favorite' => $this->favorite ? true : false,
         ];
     }
