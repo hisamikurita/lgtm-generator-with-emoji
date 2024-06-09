@@ -21,16 +21,16 @@ export const ButtonGenerate = () => {
 
         // POST送信
         setLoading(true);
-        // const res = await fetch(process.env.NEXT_PUBLIC_API_UPLOAD || '', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //         image: generate,
-        //     }),
-        // });
-        // const data = await res.json();
+        const res = await fetch(process.env.NEXT_PUBLIC_API_UPLOAD || '', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                image: generate,
+            }),
+        });
+        const data = await res.json();
         setSaveCompleteImage(generate);
         setLoading(false);
         setComplete(true);
