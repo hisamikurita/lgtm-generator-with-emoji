@@ -17,8 +17,6 @@ export const ButtonUpload = () => {
     const handleFiles: ChangeEventHandler<HTMLInputElement> = (e) => {
         if(!e.target.files || e.target.files.length === 0) return
 
-        console.log(e.target.files.length);
-
         // バイナリデータを取得
         const file = e.target.files[0] as Blob;
 
@@ -28,7 +26,6 @@ export const ButtonUpload = () => {
         reader.onload = (e) => {
             if(!e.target) return
             
-            console.log(e.target.result);
             setImages(e.target.result as string);
         }
     };

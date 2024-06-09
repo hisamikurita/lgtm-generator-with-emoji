@@ -67,7 +67,6 @@ export const CardPreview = ({image} : CardPreviewProps) => {
             context.scale(0.5, 0.5);
 
             const base64 = canvas.toDataURL('image/jpeg');
-            console.log(base64);
 
             setUpload(true)
             setGenerate(base64)

@@ -18,6 +18,10 @@ img {
     animation-name: emoji;
   }
 
+  .animation-name-hand {
+    animation-name: hand;
+  }
+
   .animation-timing-linear {
     animation-timing-function: linear;
   }
@@ -159,4 +163,10 @@ img {
 @keyframes emoji {
   0% { transform: translateY(15vh)}
   100% { transform: translateY(-100vh)} 
+}
+
+@keyframes hand {
+  0% { transform: translateY(0px)}
+  50% { transform: translateY(10px)}
+  100% { transform: translateY(0px)}
 }

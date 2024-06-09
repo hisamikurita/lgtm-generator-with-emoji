@@ -19,12 +19,6 @@ const config: Config = {
         'sans-emoji': ['var(--font-noto-color-emoji)'],
         'poppins': ['var(--font-poppins)'],
       },
-      keyframes: {
-        emoji: {
-          '0%': { transform: 'translateY(10vh)' },
-          '100%': { transform: 'translateY(-100vh)' },
-        }
-      },
     },
   },
   plugins: [

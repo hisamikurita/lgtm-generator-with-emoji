@@ -29,12 +29,10 @@ export const ButtonFavorite = ({ image_id, is_favorite } : ButtonFavoriteProps) 
             }),
         })
         const data = await res.json();
-        console.log(data);
     }
 
     const handleClick = () => {
         if(disable) return;
-        console.log('click');
 
         setDisable(true)
 

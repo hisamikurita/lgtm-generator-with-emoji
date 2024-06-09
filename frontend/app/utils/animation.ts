@@ -26,3 +26,17 @@ export const slideOut = (elm: HTMLElement | null) => {
         ease: EASING.transform,
     });
 }
+
+export const scrollTop = () => {
+    const currentY = window.pageYOffset;
+    const targetY = { value: currentY };
+
+    gsap.to(targetY, {
+        value: 0,
+        duration: 0.6,
+        ease: EASING.transform,
+        onUpdate: () => {
+            window.scrollTo(0, targetY.value);
+        }
+    });
+}

@@ -5,6 +5,7 @@ import { useAtom } from 'jotai';
 import { PREVIEW_DATA, IS_CURSOR_GENERATE, IS_LOADING, IS_COMPLETE, IS_SAVE_COMPLETE_IMAGE } from '../jotai/atom';
 import { THUMBNAIL_SIZE } from '../utils/constants';
 import { IS_UPLOAD, GENERATE_DATA } from '../jotai/atom';
+import { scrollTop } from '../utils/animation';
 
 export const ButtonGenerate = () => {
     const [complete, setComplete] = useAtom(IS_COMPLETE);
@@ -20,23 +21,23 @@ export const ButtonGenerate = () => {
 
         // POST送信
         setLoading(true);
-        const res = await fetch(process.env.NEXT_PUBLIC_API_UPLOAD || '', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                image: generate,
-            }),
-        });
-        const data = await res.json();
+        // const res = await fetch(process.env.NEXT_PUBLIC_API_UPLOAD || '', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //         image: generate,
+        //     }),
+        // });
+        // const data = await res.json();
         setSaveCompleteImage(generate);
         setLoading(false);
         setComplete(true);
+        scrollTop()
         setTimeout(() => {
             setComplete(false);
         },2000)
-        console.log(data);
     }
 
     const handleMouseEnter = () => {

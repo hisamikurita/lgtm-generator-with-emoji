@@ -23,10 +23,9 @@ export const useUuid = () => {
                     }),
                 })
                 const data = await res.json();
-                console.log(data);
             }
             else {
-                console.log('登録済みのユーザーです')
+                //
             }
         }
         setData();

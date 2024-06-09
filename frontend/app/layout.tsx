@@ -67,10 +67,10 @@ const RootLayout = ({
           ))}
           <Cursor />
           <BaseHeader />
-          {children}
-          <div className="fixed bottom-0 left-0 w-full">
-            <BaseFooter />
-          </div>
+          <main>
+            {children}
+          </main>
+          <BaseFooter />
           <GoogleAdSense />
         </div>
       </body>
