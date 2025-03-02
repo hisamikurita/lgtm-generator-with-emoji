@@ -53,7 +53,7 @@ jobs:
           username: ${{ secrets.EC2_USER_NAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /var/www
+            cd /var/www/lgtm-generator-with-emoji
             git init
             git remote add origin https://github.com/hisamikurita/lgtm-generator-with-emoji.git
             git fetch --prune
