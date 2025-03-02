@@ -57,14 +57,10 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /var/www
-            if [ -d ".git" ]; then
-              git fetch --prune
-              git checkout main
-              git pull origin main
-            else
-              echo "Error: .git not found in /var/www"
-              exit 1
-            fi
+            git init
+            git remote add origin https://github.com/hisamikurita/lgtm-generator-with-emoji.git
+            git fetch --prune
+            git checkout main
 
     ############################ Frontend ############################
 
