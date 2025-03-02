@@ -24,9 +24,9 @@ jobs:
     runs-on: ubuntu-latest
 
     # フロントエンドのディレクトリをデフォルトに設定
-    defaults:
-      run:
-        working-directory: frontend
+    # defaults:
+    #   run:
+    #     working-directory: frontend
 
     ############################ Backend ############################
 
@@ -34,9 +34,11 @@ jobs:
       # 公式のアクション「actions/checkout」実行してリポジトリをクローンしてくる
       - name: 📦 Get latest code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Install Git
-        run: apt-get update && apt-get install -y git
+      # - name: Install Git
+      #   run: apt-get update && apt-get install -y git
 
       # AWS IAM ユーザーから認証情報を取得する
       - name: 🔑 Set up AWS Credentials
