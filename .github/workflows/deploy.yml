@@ -51,7 +51,7 @@ jobs:
           username: ${{ secrets.EC2_USER_NAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /var/www/test
+            cd /var/www
             git pull origin main
 
     ############################ Frontend ############################
