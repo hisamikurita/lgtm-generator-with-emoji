@@ -58,6 +58,7 @@ jobs:
             git remote add origin https://github.com/hisamikurita/lgtm-generator-with-emoji.git
             git fetch --prune
             git checkout main
+            git pull origin main
 
     ############################ Frontend ############################
 
