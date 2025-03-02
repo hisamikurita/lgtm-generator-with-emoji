@@ -52,7 +52,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /var/www
-            git pull origin main
+            git fetch --prune && git checkout main && git pull origin main
 
     ############################ Frontend ############################
 
