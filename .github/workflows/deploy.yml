@@ -37,8 +37,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      # - name: Install Git
-      #   run: apt-get update && apt-get install -y git
+      - name: Install Git
+        run: sudo apt-get update && sudo apt-get install -y git
 
       # AWS IAM ユーザーから認証情報を取得する
       - name: 🔑 Set up AWS Credentials
