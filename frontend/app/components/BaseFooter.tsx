@@ -25,11 +25,3 @@ export const BaseFooter = () => {
         </footer>
     )
 };
-
-/**
- * @description リッチテキストのコンテントからタグを除く処理
- * @param {string | null | undefined} richTextContent - リッチテキストのコンテンツ
- * @returns { string } - HTMLタグを除いて文字列だけを返す
- * @example console.log(removeHtmlTag('<p>hoge</p>')) // hoge
- * @docs https://zenn.dev/takamoso/scraps/8a71011fe69039
- */
