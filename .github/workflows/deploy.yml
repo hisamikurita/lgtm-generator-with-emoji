@@ -16,12 +16,31 @@ env:
   NEXT_PUBLIC_API_UPLOAD: ${{ secrets.NEXT_PUBLIC_API_UPLOAD }}
   NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
   NEXT_PUBLIC_PUBLISHER_ID: ${{ secrets.NEXT_PUBLIC_PUBLISHER_ID }}
-
+  
 jobs:
   build:
 
     # Ubuntuの最新版環境内で処理を実行することを指定
     runs-on: ubuntu-latest
+
+    ############################ Backend ############################
+
+    steps:
+      # 公式のアクション「actions/checkout」実行してリポジトリをクローンしてくる
+      - name: 📦 Get latest code
+        uses: actions/checkout@v3
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST_NAME }}
+          username: ${{ secrets.EC2_USER_NAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /var/www
+            git pull origin main
+
+    ############################ Frontend ############################
 
     # フロントエンドのディレクトリに移動
     defaults:
