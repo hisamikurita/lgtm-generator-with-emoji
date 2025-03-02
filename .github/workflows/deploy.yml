@@ -35,6 +35,9 @@ jobs:
       - name: 📦 Get latest code
         uses: actions/checkout@v3
 
+      - name: Install Git
+        run: apt-get update && apt-get install -y git
+
       # AWS IAM ユーザーから認証情報を取得する
       - name: 🔑 Set up AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
