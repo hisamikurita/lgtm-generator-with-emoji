@@ -37,7 +37,7 @@ class FavoriteController extends Controller
         Log::info($all_images);
 
         $all_images->map(function($image) {
-            $image->image_url = 'http://127.0.0.1:9000/lgtm-generator/' . $image->image_url;
+            $image->image_url = 'https://images.lgtm-generator-with-emoji.com/'  . $image->image_url;
             $image->is_favorite = true;
         });
 
