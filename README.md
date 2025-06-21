@@ -1,5 +1,7 @@
 # Lgtm Generator With Emoji
 
+Sorry. This service has been closed.
+
 ![opengraph-image](https://github.com/hisamikurita/lgtm-generator-with-emoji/assets/47776346/07ee4efe-946c-446d-b5b0-119da91a364c)
 
 ## Technorogy
