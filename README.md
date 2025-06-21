@@ -8,6 +8,10 @@ https://github.com/user-attachments/assets/4f102e9f-5ab8-4397-b01a-a6b31713cad5
 
 ## Technorogy
 
+### Design
+
+Figma
+
 ### Front End
 
 Next.js, TypeScript, Tailwind
