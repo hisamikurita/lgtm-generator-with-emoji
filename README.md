@@ -4,7 +4,7 @@ Sorry. This service has been closed.
 
 ![opengraph-image](https://github.com/hisamikurita/lgtm-generator-with-emoji/assets/47776346/07ee4efe-946c-446d-b5b0-119da91a364c)
 
-https://github.com/user-attachments/assets/fd811d77-4c51-4af1-a8b9-2c8553a9620a
+https://github.com/user-attachments/assets/4f102e9f-5ab8-4397-b01a-a6b31713cad5
 
 ## Technorogy
 
